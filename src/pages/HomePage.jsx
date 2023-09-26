@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import cityscape from "../assets/cityscape.png";
+import cityscape from "../assets/cityscape.png";
 import smsbannert from "../assets/bulk.png";
 import bulk from "../assets/bulksms3.png";
 
@@ -13,7 +13,7 @@ const HomePage = () => {
       <div
         style={{
           backgroundImage:
-            "url(http://localhost:5173/src/assets/cityscape.png)",
+            "url(https://www.sinch.com/sites/default/files/styles/xx_large_hq/public/image/2021-08/Cityscape%20green%20background.png.webp?itok=SdnwcwLF)",
           width: "100%",
           height: "100vh",
           alignItems: "center",
