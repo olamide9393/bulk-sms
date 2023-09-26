@@ -1,0 +1,119 @@
+import React, { useState } from "react";
+
+const ContactUs = () => {
+  const [Data, setData] = useState();
+  function handleChange(e) {
+    const name = e.target.name;
+    const value = e.target.value;
+    setData({ ...Data, [name]: value });
+  }
+  function handleClick(e) {
+    e.preventDefault();
+
+    console.log(Data);
+  }
+  return (
+    <div>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-6">
+            <div
+              className="tab-content container mt-2"
+              style={{ backgroundColor: "whitesmoke" }}
+            >
+              <div
+                className="tab-pane fade show active"
+                id="pills-login"
+                role="tabpanel"
+                aria-labelledby="tab-login"
+              >
+                <form onSubmit={handleClick}>
+                  <br />
+
+                  <div className="form-outline mb-4">
+                    <label className="form-label" htmlFor="loginName">
+                      {" "}
+                      Your Name:
+                    </label>
+                    <input
+                      type="name"
+                      name="name"
+                      className="form-control"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="form-outline mb-4">
+                    <label className="form-label" htmlFor="loginName">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-control"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="form-outline mb-4">
+                    <label className="form-label" htmlFor="loginName">
+                      {" "}
+                      Your number
+                    </label>
+                    <input
+                      type="number"
+                      name="number"
+                      className="form-control"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="form-floating">
+                    <textarea
+                      className="form-control"
+                      placeholder="Your messages"
+                      id="floatingTextarea2"
+                      style={{ height: "100px" }}
+                    ></textarea>
+                    <label htmlFor="floatingTextarea2">Your messages</label>
+                  </div>
+                  <br />
+
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-block mb-4"
+                  >
+                    Submit
+                  </button>
+                  {/* {
+                                                               err
+                                                               &&
+                                                               <p className='text-danger text-center'>{err}</p>
+                                                      } */}
+                </form>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <p style={{ fontSize: "20px" }}>Head Office:</p>
+            <p style={{ fontSize: "20px" }}>BULK SMS</p>
+            <p>72 akobo ibadan oyo state</p>
+            <br />
+            <p style={{ fontSize: "20px" }}>Phone & Email:</p>
+            <p style={{ fontSize: "20px" }}>Sales & Enquiries:</p>
+            <p>+234 70 4848 38 28</p>
+            <p>olamideantony4@gmail.com</p>
+
+            <p style={{ fontSize: "20px" }}>Opening Hours:</p>
+            <p style={{ fontSize: "20px" }}>Days of the Week:</p>
+            <p>Mondays - Saturdays</p>
+            <p>Opening Time</p>
+            <p>8:00am</p>
+            <br />
+            <p>Closing Time</p>
+            <p>6:00pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ContactUs;
