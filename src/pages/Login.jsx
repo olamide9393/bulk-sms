@@ -21,26 +21,20 @@ const Login = () => {
       const response = await axiosInstance.post("auth/login", Data, {
         headers: { "Content-type": "application/json" },
       });
-      // console.log(response.data);
-      console.log(response);
       if (response.status === 200) {
-        // localStorage.setItem("user", response.token || null);
-
         localStorage.setItem("user", JSON.stringify(response.data || null));
       }
+      alert(response.data.message);
     } catch (error) {
       setError(error?.response?.data?.error);
       alert(error.response.data.error);
-      console.log(error.response.data.error);
-
-      console.log(error, "error");
     }
     navigate("/dashboard");
   }
 
   return (
     <div>
-      <h1 style={{textAlign:'center',fontSize:'50px'}}>Login    </h1>
+      <h1 style={{ textAlign: "center", fontSize: "50px" }}>Login</h1>
       <br />
       <div className="container">
         <div className="row">

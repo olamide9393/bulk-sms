@@ -29,11 +29,8 @@ const DashboardNav = () => {
           console.log("Token is missing or invalid.");
         }
       } catch (error) {
-        console.error("Error parsing token:", error);
       }
-    } else {
-      console.log("Token not found in localStorage.");
-    }
+    } 
     try {
       const response = await axiosInstance.get("auth/getUser", {
         headers: {
@@ -43,8 +40,6 @@ const DashboardNav = () => {
       });
       setData(response.data);
     } catch (error) {
-      console.log(error);
-
       // Handle the error appropriately for your application
       if (error.response && error.response.status === 401) {
         console.error("Request error:", error.message);
