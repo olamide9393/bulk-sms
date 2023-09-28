@@ -28,7 +28,7 @@ const Profile = () => {
   }
   return (
     <div>
-      <h1 style={{ textAlign: "center", fontSize: "50px" }}>Contact Us</h1>
+      <h1 style={{ textAlign: "center", fontSize: "50px" }}>Your profile</h1>
       <br />
       {loading ? (
         <h1>
