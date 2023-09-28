@@ -40,6 +40,8 @@ const Login = () => {
 
   return (
     <div>
+      <h1 style={{textAlign:'center',fontSize:'50px'}}>Login    </h1>
+      <br />
       <div className="container">
         <div className="row">
           <div className="col-md-6">

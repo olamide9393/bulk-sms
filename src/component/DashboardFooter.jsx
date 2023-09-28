@@ -6,6 +6,14 @@ const DashboardFooter = () => {
 <div style={{border: '1px solid black',}}></div>
 Copyright @ 2023
 
+
+
+
+
+
+
+
+
       
     </div>
   )

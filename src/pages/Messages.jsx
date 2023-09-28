@@ -11,12 +11,17 @@ const Messages = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+      // Retrieve the token string from local storage
+      const tokenString = localStorage.getItem("user");
+      const { token } = JSON.parse(tokenString);
+      console.log(token);
     try {
       const response = await axiosInstance.post("message/message", {
         sender,
         numbers: numbers.split(","),
         message,
       });
+      console.log(response);
       setResponse("Bulk SMS sent successfully.");
       console.log(response.data.response);
       navigate("/Dashboard");
@@ -25,10 +30,10 @@ const Messages = () => {
       console.error("Error sending bulk SMS:", error);
     }
   };
-
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>New SMS Messages</h2>
+         <h1 style={{textAlign:'center',fontSize:'50px'}}>New SMS Messages</h1>
+      <br />
       <form className="container-sm" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label">

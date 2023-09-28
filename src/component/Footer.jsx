@@ -38,9 +38,6 @@ const Footer = () => {
           <div className="col-sm-3"></div>
         </div>
       </div>
-      
-
-
     </div>
   );
 };

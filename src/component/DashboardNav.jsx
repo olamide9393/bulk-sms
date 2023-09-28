@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, Link,useNavigate } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../RequestUrl";
 import DashboardFooter from "./DashboardFooter";
 
@@ -34,9 +34,6 @@ const DashboardNav = () => {
     } else {
       console.log("Token not found in localStorage.");
     }
-
-    // Now, you can safely use the 'token' variable outside the if statement
-
     try {
       const response = await axiosInstance.get("auth/getUser", {
         headers: {
@@ -61,10 +58,11 @@ const DashboardNav = () => {
     let token = localStorage.removeItem("user");
     navigate("/login");
   }
+
   return (
     <div>
       <nav className="navbar bg-body-tertiary">
-        <div className="container-fluid">
+        <div className="container">
           <Link
             className="navbar-brand"
             to="/"
@@ -77,7 +75,7 @@ const DashboardNav = () => {
           <li className="nav-item dropdown">
             <a
               className="nav-link dropdown-toggle"
-              href
+              href="#"
               role="button"
               data-bs-toggle="dropdown"
             >
@@ -93,6 +91,7 @@ const DashboardNav = () => {
                   My Profile
                 </Link>
               </li>
+              <br />
               <li>
                 <Link className="nav-link" to="/dashboard">
                   Dashboard

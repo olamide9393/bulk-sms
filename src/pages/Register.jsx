@@ -23,23 +23,21 @@ const Register = () => {
       const response = await axiosInstance.post("auth/signUp", Data, {
         headers: { "Content-type": "application/json" },
       });
-
-      // console.log(response);
-
       if (response.status === 200) {
         localStorage.setItem("user", JSON.stringify(response.data));
       }
       setsuccess(response.data.msg);
       setTimeout(() => {
         navigate("/login");
-      }, 2000);
+      }, 1000);
     } catch (error) {
       setError(error?.response?.data?.error);
-      console.log(error, "error");
     }
   }
   return (
     <div>
+         <h1 style={{textAlign:'center',fontSize:'50px'}}>Sign Up</h1>
+      <br />
       <div className="container">
         <div className="row">
           <div className="col-sm-7">

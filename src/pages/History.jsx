@@ -1,43 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import axiosInstance from "../../RequestUrl";
-
-
-
+import React from "react";
 const History = () => {
-  const [loading, setloading] = useState(false);
-
-  useEffect(() => {
-    history();
-  }, []);
-  async function history() {
-    setloading(true);
-
-    // Retrieve the token string from local storage
-    const tokenString = localStorage.getItem("user");
-    const { token } = JSON.parse(tokenString);
-    // console.log(token);
-    try {
-      const { data } = await axiosInstance.get("auth/userProfile", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      });
-      setblogDatas(data.message);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setloading(false);
-    }
-  }
-
   return (
     <div>
       <br />
       <br />
-      <h2>History</h2>
-      {loading ? (
+      {/* {loading ? (
         <h1>
           <div
             className="spinner-border text-muted"
@@ -58,7 +25,10 @@ const History = () => {
             <p className="card-text">{blog.message}</p>
           </div>
         </div>
-      )}
+      )} */}
+
+      <h1 style={{ textAlign: "center", fontSize: "50px" }}>NO HISTORY</h1>
+      <br />
     </div>
   );
 };

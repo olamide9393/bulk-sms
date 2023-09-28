@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../RequestUrl";
 
-
 const Profile = () => {
   const [blogDatas, setblogDatas] = useState([]);
   const [loading, setloading] = useState(false);
@@ -11,11 +10,9 @@ const Profile = () => {
   }, []);
   async function history() {
     setloading(true);
-
     // Retrieve the token string from local storage
     const tokenString = localStorage.getItem("user");
     const { token } = JSON.parse(tokenString);
-    // console.log(token);
     try {
       const { data } = await axiosInstance.get("auth/userProfile", {
         headers: {
@@ -25,13 +22,14 @@ const Profile = () => {
       });
       setblogDatas(data.message);
     } catch (error) {
-      console.log(error);
     } finally {
       setloading(false);
     }
   }
   return (
     <div>
+      <h1 style={{ textAlign: "center", fontSize: "50px" }}>Contact Us</h1>
+      <br />
       {loading ? (
         <h1>
           <div

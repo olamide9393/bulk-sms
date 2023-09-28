@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const baseURL = "http://localhost:2000/api/v1/";
+const baseURL = "https://bulk-sms-23yv.onrender.com/";
 
 const axiosInstance = axios.create({
   baseURL: baseURL,
