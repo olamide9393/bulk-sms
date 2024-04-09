@@ -54,7 +54,7 @@ const Routes = () => {
     },
 
     {
-      path: "/Dashboard",
+      path: "/Navbar",
       element: <DashboardNav />,
       children: [
         {
